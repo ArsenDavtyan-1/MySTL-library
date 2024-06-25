@@ -5,8 +5,8 @@
 #include <initializer_list>
 #include <vector>
 #include <list>
-
-
+#include <unordered_map>
+#include "myHashTable.h"
 
 
 
@@ -14,8 +14,35 @@ int main()
 {
 	srand(time(nullptr));
 
+	my::HashTable a;
+	a.printHashTable();
+	std::cout << std::endl << std::endl << std::endl;
+	a.add(444, "sfdsf");
+	a.add(154, "fsa");
+	a.printHashTable();
+	a.add(19687, "sfad");
+	a.add(29812, "gerfggfd");
+	a.add(12915, "hrye");
+	a.add(154, "dgsfg");
+	a.add(154, "fsadsafdsa");
+	a.add(55, "'sfd'");
+	a.printHashTable();
 
-	//my::vector<int> C = { 4,0,5,-9,2,-99,45,12,84,54,12,5,4,7,-55,9,-9,1,54,0,3,55,8 };
+	for (int i = 0; i < 20; ++i)
+	{
+		a.add(rand(), "sfdf");
+	}
+	std::cout << a[154] << std::endl << std::endl << std::endl;
+	a.printHashTable();
+}
+
+
+
+
+
+
+
+//my::vector<int> C = { 4,0,5,-9,2,-99,45,12,84,54,12,5,4,7,-55,9,-9,1,54,0,3,55,8 };
 
 	//my::vector<int> A;
 	//A.push_back(7);
@@ -135,7 +162,7 @@ int main()
 	PrintForwardList(lst);*/
 
 
-	
+
 	//my::vector<int> A;;
 	//for (int i = 0; i < 27; ++i)
 	//{
@@ -154,8 +181,3 @@ int main()
 	//deletingPrimes(A);
 
 	//A.print();
-
-
-
-}
-
