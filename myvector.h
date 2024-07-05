@@ -1,5 +1,7 @@
 #ifndef MY_VECTOR_H
 #define MY_VECTOR_H
+#include <exception>
+//#include "namespace.h"
 
 
 namespace my
@@ -41,7 +43,7 @@ namespace my
 		void print();
 		~vector();
 		T operator[](int);
-
+		T& at(int);
 	};
 
 
@@ -150,7 +152,7 @@ void my::vector<T>::pop_back()
 	if (is_empty())
 		return;
 	--m_size;
-    if ((m_size < (m_cap / 2)) && m_cap > 15)
+	if (m_size < (m_cap / 2) && m_cap > 15)
 	{
 		m_cap /= 2;
 		T* new_ptr = new T[m_cap];
@@ -333,6 +335,23 @@ void my::vector<T>::print()
 		std::cout << "The container is empty" << std::endl;
 	}
 }
+
+
+template <typename T>
+T& my::vector<T>::at(int n)
+{
+	try {
+		if (n < 0 || n >= m_size)
+		{
+			throw std::bad_variant_access();
+		}
+		return *(m_ptr + n);
+	}
+	catch (std::bad_variant_access& a){
+		std::cout << a.what() << std::endl;
+	}
+}
+
 
 
 bool isPrime(int a)
