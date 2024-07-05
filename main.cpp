@@ -14,28 +14,15 @@ int main()
 {
 	srand(time(nullptr));
 
-	my::HashTable a;
-	a.printHashTable();
-	std::cout << std::endl << std::endl << std::endl;
-	a.add(444, "sfdsf");
-	a.add(154, "fsa");
-	a.printHashTable();
-	a.add(19687, "sfad");
-	a.add(29812, "gerfggfd");
-	a.add(12915, "hrye");
-	a.add(154, "dgsfg");
-	a.add(154, "fsadsafdsa");
-	a.add(55, "'sfd'");
-	a.printHashTable();
+	my::vector<int> C = { 4,0,5,-9,2,-99,45,12,84,54,12,5,4,7,-55,9,-9,1,54,0,3,55,8 };
+	std::cout << C.at(4) << std::endl;
+	std::cout << C.at(0) << std::endl;
+	std::cout << C.at(-4) << std::endl;
+	std::cout << C.at(0) << std::endl;
 
-	for (int i = 0; i < 20; ++i)
-	{
-		a.add(rand(), "sfdf");
-	}
-	std::cout << a[154] << std::endl << std::endl << std::endl;
-	a.printHashTable();
+
+
 }
-
 
 
 
@@ -181,3 +168,27 @@ int main()
 	//deletingPrimes(A);
 
 	//A.print();
+
+
+//my::HashTable a;
+//a.printHashTable();
+//std::cout << std::endl << std::endl << std::endl;
+//a.add(444, "sfdsf");
+//a.add(154, "fsa");
+//a.printHashTable();
+//a.add(19687, "sfad");
+//a.add(29812, "gerfggfd");
+//a.add(12915, "hrye");
+//a.add(154, "dgsfg");
+//a.add(154, "fsadsafdsa");
+//a.add(55, "'sfd'");
+//a.printHashTable();
+//
+//for (int i = 0; i < 20; ++i)
+//{
+//	a.add(rand(), "sfdf");
+//}
+//std::cout << a[154] << std::endl << std::endl << std::endl;
+//a.printHashTable();
+
+
