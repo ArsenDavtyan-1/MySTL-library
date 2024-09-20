@@ -30,6 +30,10 @@ namespace my
 		}
 		vector();
 		vector(std::initializer_list<T> init);
+		vector(const vector& other);
+		vector& operator=(const vector& other);
+		vector(vector&&) = delete;
+		vector& operator=(vector&& ) = delete;
 		int getSize();
 		int getCapacity();
 		void push_back(T);
@@ -123,6 +127,31 @@ my::vector<T>::vector(std::initializer_list<T> init)
 	int i = 0;
 	for (const T& elem : init)
 		m_ptr[i++] = elem;
+}
+
+template <typename T>
+my::vector<T>::vector(const vector<T>& other)
+{
+	m_size = other.m_size;
+	m_cap = other.m_cap;
+	m_ptr = new T[m_cap];
+	for (int i = 0; i < m_size; ++i)
+		m_ptr[i] = other.m_ptr[i];
+}
+
+template <typename T>
+my::vector<T>& my::vector<T>::operator=(const my::vector<T>& other)
+{
+	if (this != &other)
+	{
+		delete[] m_ptr;
+		m_size = other.m_size;
+		m_cap = other.m_cap;
+		m_ptr = new T[m_cap];
+		for (int i = 0; i < m_size; ++i)
+			m_ptr[i] = other.m_ptr[i];
+	}
+	return* this;
 }
 
 template <typename T>
