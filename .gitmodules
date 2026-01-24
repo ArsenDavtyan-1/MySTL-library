@@ -1,0 +1,12 @@
+[submodule "My-STL-algorithms"]
+	path = My-STL-algorithms
+	url = git@github.com:ArsenDavtyan-1/My-STL-algorithms.git
+[submodule "MySTL-iterators"]
+	path = MySTL-iterators
+	url = git@github.com:ArsenDavtyan-1/MySTL-iterators.git
+[submodule "MySTL-containers"]
+	path = MySTL-containers
+	url = git@github.com:ArsenDavtyan-1/MySTL-containers.git
+[submodule "MySTL-algorithms"]
+	path = MySTL-algorithms
+	url = git@github.com:ArsenDavtyan-1/MySTL-algorithms.git
